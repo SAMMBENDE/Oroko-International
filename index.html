@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCA EU Constitutional Referendum 2026</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: #121a2d;
+        --muted: #aeb8ca;
+        --text: #f5f7fb;
+        --accent: #d9b36c;
+        --line: #27324a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(
+          circle at top,
+          #1b2742 0,
+          #0b1020 48%,
+          #070b14 100%
+        );
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .wrap {
+        width: min(920px, 100%);
+      }
+      .card {
+        border: 1px solid var(--line);
+        background: rgba(18, 26, 45, 0.94);
+        border-radius: 24px;
+        padding: 42px 34px;
+        text-align: center;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      }
+      .eyebrow {
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+      }
+      h1 {
+        margin: 14px 0 8px;
+        font-size: clamp(30px, 6vw, 58px);
+        line-height: 1.02;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-size: 17px;
+        margin: 0 auto 30px;
+        max-width: 700px;
+        line-height: 1.5;
+      }
+      .rule {
+        height: 1px;
+        background: var(--line);
+        margin: 24px 0 30px;
+      }
+      .logo-section {
+        margin: 0 auto 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .oca-logo {
+        width: clamp(100px, 20vw, 180px);
+        height: auto;
+        filter: drop-shadow(0 8px 24px rgba(217, 179, 108, 0.15));
+        transition:
+          transform 0.3s ease,
+          filter 0.3s ease;
+      }
+      .oca-logo:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 12px 32px rgba(217, 179, 108, 0.25));
+      }
+      .count {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        max-width: 760px;
+        margin: 0 auto 30px;
+      }
+      .unit {
+        background: #0d1425;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 10px;
+      }
+      .num {
+        font-size: clamp(30px, 6vw, 56px);
+        font-weight: 800;
+        font-variant-numeric: tabular-nums;
+      }
+      .label {
+        margin-top: 4px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 11px;
+      }
+      .dates {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+      .datebox {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 18px;
+        background: #0d1425;
+      }
+      .datebox strong {
+        display: block;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .datebox span {
+        color: var(--text);
+        font-weight: 700;
+      }
+      .principle {
+        margin: 30px auto 0;
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: 0.08em;
+      }
+      .footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .status {
+        margin-top: 20px;
+        font-weight: 800;
+        color: var(--accent);
+      }
+      @media (max-width: 620px) {
+        .card {
+          padding: 30px 18px;
+        }
+        .count {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .subtitle {
+          font-size: 15px;
+        }
+        .logo-section {
+          margin: 0 auto 24px;
+        }
+        .oca-logo {
+          width: clamp(80px, 18vw, 140px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <main class="card">
+        <div class="eyebrow">OCA EU • Constitutional Review Committee</div>
+        <h1>Constitutional Referendum 2026</h1>
+        <p class="subtitle">
+          A direct vote by registered members on the proposed constitutional
+          reforms.
+        </p>
+        <div class="rule"></div>
+
+        <div class="logo-section">
+          <img
+            src="images/logo.jpeg"
+            alt="OCA - Oroko Cultural Association Europe Logo"
+            class="oca-logo"
+          />
+        </div>
+
+        <div id="count" class="count" aria-live="polite">
+          <div class="unit">
+            <div id="days" class="num">00</div>
+            <div class="label">Days</div>
+          </div>
+          <div class="unit">
+            <div id="hours" class="num">00</div>
+            <div class="label">Hours</div>
+          </div>
+          <div class="unit">
+            <div id="minutes" class="num">00</div>
+            <div class="label">Minutes</div>
+          </div>
+          <div class="unit">
+            <div id="seconds" class="num">00</div>
+            <div class="label">Seconds</div>
+          </div>
+        </div>
+
+        <div id="status" class="status">COUNTDOWN TO POLLING OPEN</div>
+
+        <div class="dates">
+          <div class="datebox">
+            <strong>Polls open</strong><span>12 August 2026 • 21:00</span>
+          </div>
+          <div class="datebox">
+            <strong>Polls close</strong><span>13 August 2026 • 17:00</span>
+          </div>
+        </div>
+
+        <div class="principle">ONE REGISTERED MEMBER • ONE VOTE</div>
+        <div class="footer">Times shown in Europe/Paris time.</div>
+      </main>
+    </div>
+
+    <script>
+      const openAt = new Date('2026-08-12T21:00:00+02:00').getTime()
+      const closeAt = new Date('2026-08-13T17:00:00+02:00').getTime()
+      const $ = (id) => document.getElementById(id)
+
+      function render(ms, label) {
+        if (ms < 0) ms = 0
+        const s = Math.floor(ms / 1000)
+        const d = Math.floor(s / 86400)
+        const h = Math.floor((s % 86400) / 3600)
+        const m = Math.floor((s % 3600) / 60)
+        const sec = s % 60
+        $('days').textContent = String(d).padStart(2, '0')
+        $('hours').textContent = String(h).padStart(2, '0')
+        $('minutes').textContent = String(m).padStart(2, '0')
+        $('seconds').textContent = String(sec).padStart(2, '0')
+        $('status').textContent = label
+      }
+
+      function tick() {
+        const now = Date.now()
+        if (now < openAt) render(openAt - now, 'COUNTDOWN TO POLLING OPEN')
+        else if (now < closeAt)
+          render(closeAt - now, 'VOTING IS OPEN • TIME REMAINING')
+        else render(0, 'POLLING CLOSED')
+      }
+      tick()
+      setInterval(tick, 250)
+    </script>
+  </body>
+</html>
