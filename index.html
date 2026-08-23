@@ -173,11 +173,10 @@
   <body>
     <div class="wrap">
       <main class="card">
-        <div class="eyebrow">OCA EU • Constitutional Review Committee</div>
-        <h1>Constitutional Referendum 2026</h1>
+        <div class="eyebrow">OROKO INTERNATIONAL • 1ST MEETING</div>
+        <h1>Oroko International Meeting 2026</h1>
         <p class="subtitle">
-          A direct vote by registered members on the proposed constitutional
-          reforms.
+          First Virtual Zoom Meeting of the Oroko International Organization.
         </p>
         <div class="rule"></div>
 
@@ -208,14 +207,14 @@
           </div>
         </div>
 
-        <div id="status" class="status">COUNTDOWN TO POLLING OPEN</div>
+        <div id="status" class="status">COUNTDOWN TO INAUGURAL MEETING</div>
 
         <div class="dates">
           <div class="datebox">
-            <strong>Polls open</strong><span>12 August 2026 • 18:00</span>
+            <strong>Meeting Starts</strong><span>23 August 2026 • 18:00</span>
           </div>
           <div class="datebox">
-            <strong>Polls close</strong><span>13 August 2026 • 17:00</span>
+            <strong>Meeting Ends</strong><span>23 August 2026 • 20:00</span>
           </div>
         </div>
 
@@ -225,8 +224,8 @@
     </div>
 
     <script>
-      const openAt = new Date('2026-08-12T18:00:00+02:00').getTime()
-      const closeAt = new Date('2026-08-13T17:00:00+02:00').getTime()
+      const openAt = new Date('2026-08-23T18:00:00+02:00').getTime()
+      const closeAt = new Date('2026-08-23T20:00:00+02:00').getTime()
       const $ = (id) => document.getElementById(id)
 
       function render(ms, label) {
@@ -245,10 +244,10 @@
 
       function tick() {
         const now = Date.now()
-        if (now < openAt) render(openAt - now, 'COUNTDOWN TO POLLING OPEN')
+        if (now < openAt) render(openAt - now, 'COUNTDOWN TO INAUGURAL MEETING')
         else if (now < closeAt)
-          render(closeAt - now, 'VOTING IS OPEN • TIME REMAINING')
-        else render(0, 'POLLING CLOSED')
+          render(closeAt - now, 'MEETING IS OPEN • TIME REMAINING')
+        else render(0, 'MEETING CLOSED')
       }
       tick()
       setInterval(tick, 250)
